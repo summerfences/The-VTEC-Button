@@ -1,0 +1,47 @@
+# kivy 2.1.0
+
+<HondaScreen>:
+    canvas:
+        # white background
+        # color is attribute for canvas
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: root.x, root.y
+            size: root.width, root.height
+
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+
+        Label:
+            pos_hint: {'x': 0, 'y': .75}
+            size_hint: 1, 1
+            text_size: self.size
+            text: 'The VTEC Button'
+            font_name: 'RobotoMono-Regular'
+            font_size: 35
+            bold: True
+            color: 0, 0, 0, 1
+
+        GridLayout:
+            cols: 1
+            pos_hint: {'x': .275, 'y': .1 }
+            size_hint: None, None
+            size: root.width * .45, root.width * .45
+            HondaButton:
+
+
+<HondaButton>:
+    Button:
+        on_press: root.button_pressed()
+        pos: root.x, root.y
+        size: root.width, root.height
+        # setting color to white
+        background_normal: ''
+        background_color: 1,1,1,1
+
+    Image:
+        source: 'honda.png'
+        pos: root.x, root.y
+        size: root.width, root.height
